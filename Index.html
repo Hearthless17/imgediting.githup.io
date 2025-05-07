@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>កម្មវិធីកែប្រែរូបភាព</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container disable">
+        <h2>កម្មវិធីកែប្រែរូបភាព<span>(Edting Photo)</span></h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <span class="title">Filters</span>
+                <div class="options filter">
+                    <button id="brightness" class="active">Brightness</button>
+                    <button id="saturation">Saturation</button>
+                    <button id="inversion">Inversion</button>
+                    <button id="grayscale">Grayscale</button>
+                </div>
+                <div class="slider">
+                    <div class="filter-info">
+                        <p class="name">Brightness</p>
+                        <p class="value">100%</p> 
+                    </div>
+                    <input type="range" value="100" min="0" max="100" id="brightness-slider">
+                </div>
+                <span class="title">Rotate & Flip</span>
+                <div class="options rotate">
+                    <button id="left">&#8634;</button>
+                    <button id="right">&#8635;</button>
+                    <button id="horizontal">&#8646;</button>
+                    <button id="vertical">&#8645;</button>
+                </div>
+            </div>
+            <div class="preview-img">
+
+                <img id="output-image" src="" alt="រូបភាពនឹងបង្ហាញនៅទីនេះ">   
+
+            </div> 
+
+        </div>
+        <div class="controls">
+            <button class="reset-filter">Reset Filters</button>
+            <div class="row">
+
+                <input type="file" class="file-input" accept="image/*" hidden>
+                
+                <button class="click-to-remove-bg">លុប Background</button>
+                <button class="upload-background-to-photo">ជ្រើសរើស Background </button>
+                <button class="choose-img">ជ្រើសរើសរូបភាព</button>
+                <button class="save-img">រក្សាទុករូបភាព</button>
+            </div>
+        </div> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

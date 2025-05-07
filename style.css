@@ -1,0 +1,319 @@
+/* ========================================
+   Importing Google Fonts
+   ======================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dangrek&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+   
+   /* ========================================
+      Global Styles
+      ======================================== */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: "Dangrek", sans-serif;
+   }
+   
+   /* ========================================
+      Body Styling
+      ======================================== */
+   body {
+       display: flex;
+       padding: 10px;
+       min-height: 100vh;
+       align-items: center;
+       justify-content: center;
+       background: rgb(2, 2, 78); 
+       color: white; /* Ensure text is readable */
+   }
+   
+   /* ========================================
+      Container Styling
+      ======================================== */
+   .container {
+       width: 900px;
+       padding: 40px;
+       background: url('../HTML_Editphoto/photo/bg.jpg') no-repeat center/cover; /* Ensures full coverage */
+       border-radius: 15px;
+       box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+       border: 3px solid white;
+   }
+   
+   /* ========================================
+      Disabled State Styling
+      ======================================== */
+   .container.disable .editor-panel,
+   .container.disable .controls .reset-filter,
+   .container.disable .controls .save-img,
+   .container.disable .click-to-remove-bg,
+   .container.disable .upload-background-to-photo {
+       opacity: 0.5;
+       pointer-events: none;
+   }
+   
+   /* ========================================
+      Heading Styling
+      ======================================== */
+   .container h2 {
+       margin-top: -5px;
+       font-size: 30px;
+       font-weight: 300;
+       color: whitesmoke;
+       text-align: center;
+       font-family: "Moul", serif;
+       letter-spacing: 1px;
+   }
+   
+   .container h2 span {
+       font-size: 30px;
+       font-weight: 300;
+       font-family: "Merriweather", serif;
+       font-weight: 500;
+   }
+   
+   /* ========================================
+      Wrapper Styling
+      ======================================== */
+   .container .wrapper {
+       display: flex;
+       margin: 25px 0;
+       min-height: 350px;
+   }
+   
+   /* ========================================
+      Editor Panel Styling
+      ======================================== */
+   .wrapper .editor-panel {
+       padding: 20px;
+       width: 300px;
+       border-radius: 8px;
+       border: 4px solid white;
+       background: rgb(2, 2, 78); /* Dark blue background for editor */
+   }
+   
+   .editor-panel .title {
+       display: block;
+       font-size: 18px;
+       margin-bottom: 14px;
+       color: white;
+   }
+   
+   /* ========================================
+      Editor Options Styling
+      ======================================== */
+   .editor-panel .options,
+   .controls {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+   }
+   
+   .editor-panel button {
+       outline: none;
+       height: 45px;
+       font-size: 15px;
+       color: white;
+       background: rgb(2, 2, 78); /* Set the dark blue background */
+       border-radius: 5px;
+       margin-bottom: 10px;
+       border: 2px solid white;
+       transition: background 0.3s, color 0.3s;
+   }
+   
+   .editor-panel .filter button {
+       width: calc(50% - 5px);
+   }
+   
+   .editor-panel button:hover {
+       background: white;
+       color: #3A5A7C;
+   }
+   
+   /* ========================================
+      Active Filter Button
+      ======================================== */
+   .filter button.active {
+       color: white;
+       border-color: white;
+       background: #3A5A7C;
+   }
+   
+   /* ========================================
+      Slider Styling
+      ======================================== */
+   .filter .slider {
+       margin-top: 14px;
+   }
+   
+   .filter .slider .filter-info {
+       display: flex;
+       color: white;
+       font-size: 16px;
+       justify-content: space-between;
+   }
+   
+   .filter .slider input {
+       width: 100%;
+       height: 6px;
+       accent-color: white;
+   }
+   
+   /* ========================================
+      Rotate Options Styling
+      ======================================== */
+   .editor-panel .rotate {
+       margin-top: 20px;
+   }
+   
+   .editor-panel .rotate button {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: calc(100% / 4 - 5px);
+   }
+   
+   .rotate .options button:nth-child(3),
+   .rotate .options button:nth-child(4) {
+       font-size: 20px;
+   }
+   
+   .rotate .options button:active {
+       color: white;
+       background: #3A5A7C;
+       border-color: white;
+   }
+   
+   /* ========================================
+      Preview Image Styling
+      ======================================== */
+   .wrapper .preview-img {
+       flex-grow: 1;
+       display: flex;
+       overflow: hidden;
+       margin-left: 25px;
+       border-radius: 8px;
+       align-items: center;
+       justify-content: center;
+   }
+   
+   .preview-img img {
+       max-width: 500px;
+       max-height: 350px;
+       width: auto;
+       height: auto;
+       object-fit: contain;
+       border: 3px solid white;
+       border-radius: 8px;
+   }
+   
+   /* ========================================
+      Controls Button Styling
+      ======================================== */
+   .controls button {
+       padding: 12px 22px;
+       font-size: 15px;
+       border-radius: 5px;
+       outline: none;
+       color: white;
+       cursor: pointer;
+       background: rgb(2, 2, 78); /* Dark blue background for controls */
+       transition: all 0.3s ease;
+       text-transform: uppercase;
+       border: 2px solid white;
+   }
+   
+   /* ========================================
+      Reset Filter Button Styling
+      ======================================== */
+   .controls .reset-filter {
+       color: white;
+       border: 2px solid white;
+       background: rgb(122, 6, 6);
+   }
+   
+   .controls .reset-filter:hover {
+       color: #A23E3E;
+       background: white;
+   }
+   
+   /* ========================================
+      Button Hover Effects
+      ======================================== */
+   .controls .choose-img,
+   .controls .save-img,
+   .upload-background-to-photo,
+   .upload-img-remove-bg,
+   .click-to-remove-bg {
+       background: rgb(2, 2, 78); /* Dark blue background for buttons */
+       border: 2px solid white;
+       font-family: "Dangrek", sans-serif;
+       transition: background 0.3s, color 0.3s;
+   }
+   
+   /* ========================================
+      Click-to-Remove and Upload Background Button Styling
+      ======================================== */
+   .click-to-remove-bg, .upload-background-to-photo {
+       background: rgb(2, 2, 78); /* Dark blue background for these specific buttons */
+       color: white; /* Text color to make it visible on dark background */
+   }
+   
+   /* Hover effect */
+   .click-to-remove-bg:hover, .upload-background-to-photo:hover {
+       background: rgb(2, 2, 78); /* Stay same as original on hover */
+       opacity: 0.8; /* Slight opacity change on hover */
+   }
+   
+   /* ========================================
+      General Button Hover Effects
+      ======================================== */
+   .controls .choose-img:hover,
+   .controls .save-img:hover,
+   .upload-background-to-photo:hover,
+   .upload-img-remove-bg:hover,
+   .click-to-remove-bg:hover {
+       background: rgb(122, 6, 6);
+       color: white;
+       border-color: white;
+   }
+   .preview-img {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+   }
+
+   @media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    .wrapper .preview-img img {
+        max-width: 100%;
+        max-height: 300px;
+    }
+    .editor-panel .filter button {
+        width: 100%;
+    }
+    .controls button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h2 {
+        font-size: 24px;
+    }
+    .editor-panel .title {
+        font-size: 16px;
+    }
+    .editor-panel button {
+        font-size: 14px;
+    }
+    .preview-img {
+        height: 300px;
+    }
+}
